@@ -10,7 +10,7 @@ public class Screen {
         scanner.nextLine();
 
         List<Day> days = new ArrayList<>();
-
+        double currentLeft = total;
         while (true) {
             System.out.print("Enter date (or 'done' to finish): ");
             String date = scanner.nextLine();
@@ -29,7 +29,9 @@ public class Screen {
             double e = scanner.nextDouble();
             scanner.nextLine();
 
-
+            Day day = new Day(date, a, b, c, d, e, currentLeft);
+            currentLeft = day.getLeft();
+            days.add(day);
         }
 
         System.out.printf("%-10s %8s %8s %8s %8s %8s %8s %8s%n", "Date", "A", "B", "C", "D", "E", "Sum", "Left");

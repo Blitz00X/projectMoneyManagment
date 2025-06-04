@@ -38,6 +38,7 @@ public class MoneyTrackerGUI extends JFrame {
             String date = JOptionPane.showInputDialog(this, "Enter date (dd.MM.yyyy)");
             if (date != null && !date.trim().isEmpty()) {
                 model.addRow(new Object[]{date, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0});
+
             }
         });
 
@@ -45,30 +46,13 @@ public class MoneyTrackerGUI extends JFrame {
             @Override
             public void tableChanged(TableModelEvent e) {
                 if (e.getType() == TableModelEvent.UPDATE) {
-                    int row = e.getFirstRow();
-                    if (row >= 0) {
-                        updateRow(row);
-                    }
-                }
-            }
-        });
 
         setLayout(new BorderLayout());
         add(top, BorderLayout.NORTH);
         add(scroll, BorderLayout.CENTER);
     }
 
-    private void updateRow(int row) {
-        double a = parse(model.getValueAt(row, 1));
-        double b = parse(model.getValueAt(row, 2));
-        double c = parse(model.getValueAt(row, 3));
-        double d = parse(model.getValueAt(row, 4));
-        double e = parse(model.getValueAt(row, 5));
-        double sum = a + b + c + d + e;
-        double total = parse(totalField.getText());
-        double left = total - sum;
-        model.setValueAt(sum, row, 6);
-        model.setValueAt(left, row, 7);
+
     }
 
     private double parse(Object val) {

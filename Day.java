@@ -8,7 +8,7 @@ public class Day {
     private double sum;
     private double left;
 
-    public Day(String date, double a, double b, double c, double d, double e, double total) {
+
         this.date = date;
         this.categoryA = a;
         this.categoryB = b;
@@ -16,7 +16,7 @@ public class Day {
         this.categoryD = d;
         this.categoryE = e;
         this.sum = a + b + c + d + e;
-        this.left = total - this.sum;
+
     }
 
     public String getDate() {

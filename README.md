@@ -1,19 +1,19 @@
-# projectMoneyManagment
+# Budget Manager
 
-This application provides a simple Excel-like interface for tracking daily spending across five categories (A–E). Each day is shown on the left while the categories appear as columns at the top. The sum for the day and the remaining money are calculated automatically.
+Simple JavaFX application for tracking personal expenses and income with a daily spending suggestion.
 
-## Usage
+## Features
+- Add expenses with amount, description, category, and date.
+- Add income entries with amount, description, and date.
+- View all records in a table.
+- Dynamic daily spending suggestion based on current month data.
 
-Compile all Java files:
+## Running
+The project uses Java and JavaFX. Compile and run with:
 
-```bash
-javac *.java
+```
+javac --module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml -d out src/budget/*.java
+java --module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml -cp out:src budget.Main
 ```
 
-Run the graphical interface:
-
-```bash
-java MoneyTrackerGUI
-```
-
-Enter your total amount of money in the field at the top and use the **Add Day** button to add rows. Edit the category values directly in the table; the *Sum* and *Left* columns update whenever you change a value.
+This project stores data in memory only.

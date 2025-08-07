@@ -9,11 +9,6 @@ Simple JavaFX application for tracking personal expenses and income with a daily
 - Dynamic daily spending suggestion based on current month data.
 
 ## Running
-The project uses Java and JavaFX. Compile with:
-
-```
-javac --module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml -d out src/budget/*.java
-java --module-path /usr/share/openjfx/lib:out --add-modules javafx.controls,javafx.fxml budget.Main
 ```
 
 This project stores data in memory only.
